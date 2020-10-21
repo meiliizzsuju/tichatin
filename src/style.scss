@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Skin';
+  // Here's the thing: Skin is not being picked up on android, so I am forcing it to use an OTF file which seems to be only one supported
+  src: url('./fonts/skin.otf') format('opentype'),
+      url('./fonts/Skin-Regular.woff2') format('woff2'),
+      url('./fonts/Skin-Regular.woff') format('woff'),
+      // url('./fonts/Skin-Regular.TTF') format('truetype'),
+      url('./fonts/Skin-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fiona';
+  src: url('./fonts/Fiona-Regular.woff2') format('woff2'),
+       url('./fonts/Fiona-Regular.woff') format('woff'),
+       url('./fonts/Fiona-Regular.ttf') format('truetype'),
+       url('./fonts/Fiona-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Settings
+@import './styles/settings/animation';
+@import './styles/settings/color';
+@import './styles/settings/gutters';
+@import './styles/settings/input';
+@import './styles/settings/responsive';
+@import './styles/settings/typography';
+@import './styles/settings/z';
+
+//Tools
+@import './styles/tools/_responsive';
+
+
+//Elements
+@import './styles/elements/all';
+@import './styles/elements/button';
+@import './styles/elements/heading';
+@import './styles/elements/img';
+@import './styles/elements/list';
+
+@import './styles/elements/select';
+
+@import './styles/elements/_a';
+@import './styles/elements/_body';
+
+//Components
+@import './styles/components/banner';
+@import './styles/components/collapse';
+
+// Objects
+@import './styles/objects/experiences.scss';
+@import './styles/objects/skills-bubbles.scss';
+@import './styles/objects/work-list.scss';
+@import './styles/objects/contact-list.scss';
+
+//Vondors
+@import './styles/vendors/slick';

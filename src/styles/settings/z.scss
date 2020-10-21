@@ -1,0 +1,25 @@
+/*
+ *  Z-Index Settings
+ *    Provides a manageable Z Index order list so that elements don't overflow
+ *    when they shouldn't.
+ *
+ *  Version:
+ *    2.0.0 - 2018/10/31
+ */
+$s-z--loader: 10;
+
+$s-z--header-loverlay: 5;
+$s-z--header-onscroll: 50;
+$s-z--header-onshrink: 60;
+
+$s-z--collection-shapes: 5;
+$s-z--collection-content: 10;
+
+$s-z--slide-arrow: 2;
+$s-z--text-overlay: 1;
+
+$s-z--desktop-menu: 80; //High number to trump other styles.
+$s-z--desktop-logo: 100; //needed for IE Support
+$s-z--header: 20;
+
+$s-z--footer: 2;

@@ -1,0 +1,19 @@
+//  contact-list
+
+.o-contact-list{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  &__link{
+    display: block;
+    margin: 0 ($s-gutter--xsmall*2);
+    > svg {
+      width: ($s-gutter--xsmall*3);
+      height: ($s-gutter--xsmall*3);
+      fill: $s-color--tertiary;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+//  work-list
+
+.o-work-list{
+  &__item{
+    margin: ($s-gutter--xsmall) 0;
+    &.is-more{
+      color: $s-color--tertiary;
+    }
+  }
+}

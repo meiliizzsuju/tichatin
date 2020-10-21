@@ -1,0 +1,46 @@
+// o-experiences
+
+.o-experiences{
+  padding: ($s-gutter--small);
+  &__year{
+    display: inline-block;
+    font-family: $s-font--stack-secondary;
+    font-style: italic;
+    font-size: 1.625em;
+    font-weight: 600;
+    color: $s-color--tertiary;
+    margin-bottom: $s-gutter--base;
+  }
+
+  &__name{
+    display: inline-block;
+  }
+
+  &__title{
+    font-size: 0.75em;
+    display: block;
+    margin-top: -0.15rem;
+    margin-bottom: 1.15rem;
+  }
+
+  &__desc{
+    position: relative;
+    margin-left: $s-gutter--small;
+    margin-top: $s-gutter--base;
+    li{
+      position: relative;
+      font-size: 0.85em;
+      margin: $s-gutter--base 0;
+      &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0.75em;
+        left: -$s-gutter--small;
+        height: 1px;
+        width: 1rem;
+        background-color: $s-color--default;
+      }
+    }
+  }
+}

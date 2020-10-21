@@ -1,0 +1,45 @@
+/*
+ *  Button Styles
+ *    Button reset styles
+ *
+ *  Version:
+ *    2.0.0 - 2018/11/01
+ */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+{
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  outline: none;
+
+  &:-moz-focusring {
+    outline: none;
+  }
+
+
+  &[data-geotag] {
+    &[disabled] {
+      background: rgba($s-color--default, 0.15);
+      &:hover, &:focus {
+        background: rgba($s-color--default, 0.15);
+      }
+    }
+  }
+}
+
+input[type="date"]::before { 
+	content: attr(placeholder);
+	width: 100%;
+}
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }

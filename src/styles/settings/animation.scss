@@ -1,0 +1,106 @@
+/*
+ *  Animation Settings
+ *    Provides basic animation settings for use throughout the site.
+ *
+ *  Version:
+ *    2.0.0 - 2018/10/31
+ */
+$s-animation--ease-in-out: ease;
+$s-animation--ease-in: ease-in;
+$s-animation--ease-out: ease-out;
+
+$s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
+
+@keyframes o-btn-border-run {
+  0% { 
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  51% {
+    transform: translateX(-100%);
+  }
+  100% { 
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideup{
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px) rotate(10deg)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px)
+  }
+
+  80% {
+    -webkit-transform: translateY(10px)
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg)
+  }
+}
+
+@keyframes container-slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg)
+  }
+}
+
+@keyframes swing1 {
+  0%{transform:rotate(-3deg)}
+  50%{transform:rotate(3deg)}
+  100%{transform:rotate(-3deg)}
+}
+@-webkit-keyframes swing1 {
+  0%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  50%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+  100%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+}
+@keyframes swing1 {
+  0%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  50%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+  100%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+}
+
+@keyframes swing2 {
+  0%{transform:rotate(3deg)}
+  50%{transform:rotate(-3deg)}
+  100%{transform:rotate(3deg)}
+}
+@-webkit-keyframes swing2 {
+  0%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+  50%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  100%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+}
+@keyframes swing2 {
+  0%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+  50%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  100%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+}
+
+@keyframes swing3 {
+  0%{transform:rotate(2deg)}
+  50%{transform:rotate(-3deg)}
+  100%{transform:rotate(2deg)}
+}
+@-webkit-keyframes swing3 {
+  0%{-webkit-transform:rotate(3deg);transform:rotate(2deg)}
+  50%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  100%{-webkit-transform:rotate(3deg);transform:rotate(2deg)}
+}
+@keyframes swing3 {
+  0%{-webkit-transform:rotate(3deg);transform:rotate(2deg)}
+  50%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  100%{-webkit-transform:rotate(3deg);transform:rotate(2deg)}
+}

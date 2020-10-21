@@ -1,0 +1,12 @@
+// __collapse
+
+.c-section-banner__collapse + .c-section-banner__collapse{
+  margin-top: ($s-gutter--large*2);
+}
+
+
+.c-section-banner__collapse{
+  &-title{
+    text-align: center;
+  }
+}

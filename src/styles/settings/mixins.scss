@@ -1,0 +1,49 @@
+// all the mixins
+
+@mixin t-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin t-flex-row-reverse() {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@mixin t-flex-justify-between(){
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+@mixin t-flex-justify-flex-end(){
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+@mixin t-flex-justify-flex-start(){
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+
+@mixin t-flex-justify-center(){
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+@mixin t-flex-alignitems-flex-end(){
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+          -ms-grid-row-align: flex-end;
+      align-items: flex-end;
+}
+
+@mixin transition-basic(){
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+} 

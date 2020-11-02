@@ -7,4 +7,231 @@
       color: $s-color--tertiary;
     }
   }
+  &__link{
+    position: relative;
+    &-key-feature,
+    &-hover{
+      position: absolute;
+      opacity: 0;
+      @include transition-basic();
+    }
+  }
+
+  &__more{
+    &-dot{
+      position: relative;
+      color: transparent;
+      &:after{
+        content: "";
+        position: absolute;
+        width: 60%;
+        background: linear-gradient(90deg,$s-color--tertiary 50%,transparent 0);
+        background-repeat: repeat-x;
+        background-size: 3px 2px;
+        background-position: 0 0, 200px 100px, 0 100px, 200px 0;
+        padding: 4px;
+        animation: border-dance 100s infinite linear;
+        top: 50%;
+        margin: 3px;
+        right: -30%;
+      }
+    }
+  }
+
+  // landscape tablet & desktop up
+  @include t-media-query($s-medium-up) {
+    margin-bottom: ($s-gutter--base*5);
+
+    // positioning
+    &__link{
+      padding: 0.25rem 0;
+      &-key-feature{
+        bottom: 0;
+        left: 0;
+        font-size: 9px;
+        color: grey;
+      }
+      &-hover{
+        position: fixed;
+        right: 40%;
+        left: 18vw;
+        @include t-flex();
+        @include t-flex-justify-flex-end();
+        @include t-flex-alignitems-flex-end();
+        max-width: 750px;
+        visibility: hidden;
+        top: 24vh;
+        .is-bff &,
+        .is-glowoasis &{
+          top: 7rem;
+        }
+        .is-beysis &{
+          padding-right: 2vw;
+        }
+
+        .is-glowoasis &{
+          padding-right: 3vw;
+        }
+
+        .is-penrith &,
+        .is-keeko &,
+        .is-simplesat &,
+        .is-zitsticka &{
+          @include t-flex-justify-center();
+        }
+        
+        .is-tedxbkk &{
+          @include t-flex-justify-flex-start();
+        }
+
+        .is-zitsticka &{
+          top: 26rem;
+        }
+      }
+    }
+
+    &__img{
+      display: block;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 12px 14px 18px rgba(0,0,0,0.2);
+      &.is-1{
+        width: 20%;
+        .is-anstel &{
+          width: 15%;
+          margin-right: 4%;
+          margin-bottom: -15%;
+        }
+        .is-bff &{
+          width: 15%;
+          margin-right: 5%;
+          margin-top: -8%;
+        }
+        .is-beysis &{
+          margin-right: 4%;
+          margin-bottom: 16%;
+        }
+
+        .is-glowoasis &{
+          width: 35%;
+          margin-right: 2rem;
+          margin-bottom: 14%;
+        }
+        
+        .is-keeko &,
+        .is-tedxbkk &{
+          margin-right: 4%;
+        }
+
+      }
+      &.is-2{
+        width: 40%;
+        .is-anstel &{
+          margin-top: 5%;
+        }
+        .is-glowoasis &{
+          width: 35%;
+        }
+        .is-snowsport &{
+          width: 30%;
+          margin-left: 5%;
+        }
+        .is-simplesat &{
+          width: 60%;
+        }
+
+        .is-tedxbkk &{
+          width: 45%;
+          margin-top: 12%;
+        }
+        .is-zitsticka &{
+          width: 50%;
+          margin-left: 5%;
+          margin-bottom: 6%;
+        }
+      }
+
+      &.is-3 {
+        .is-snowsport &{
+          width: 30%;
+          margin-left: 5%;
+        }
+      }
+    }
+
+    // hover effect SOW
+    &__link{
+      display: block;
+      &:hover,&:active,&:focus{
+        // show
+        .o-work-list__link-key-feature{
+          opacity: 1;
+        }
+        .o-work-list__link-hover{
+          opacity: 0.6;
+        }
+        // position
+        .o-work-list__link-key-feature{
+          bottom: -7px;
+        }
+        .o-work-list__link-hover{
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  @include t-media-query($s-large-up) {
+    &__link{
+      &-hover{
+        right: 39%;
+
+      }
+    }
+    &__img{
+      &.is-1{
+        .is-anstel &{
+          margin-bottom: 0;
+        }
+        .is-bff &{
+          margin-right: 8vw;
+          margin-bottom: 10%;
+        }
+      }
+      &.is-2{
+        .is-bff &{
+          margin-right: 4vw;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1560px){
+    margin-bottom: ($s-gutter--large);
+
+    &__link{
+      &-hover{
+        top: 20vh;
+        .is-bff &,
+        .is-glowoasis &,
+        .is-snowsport &,
+        .is-penrith &,
+        .is-keeko &{
+          top: 4rem;
+        }
+        .is-zitsticka &{
+          top: 18rem;
+        }
+      }
+    }
+
+    &__img{
+
+      &.is-2{
+        .is-bff &{
+          margin-right: 4vw;
+        }
+      }
+    }
+  }
 }

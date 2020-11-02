@@ -7,6 +7,7 @@ import './vendors/jquery.inview';
 
 // mainav
 import { MainNav } from './scripts/mainNav';
+import { CollapseSec } from './scripts/collapseSection';
 
 window.jQuery = $;
 window.$ = $;
@@ -42,23 +43,39 @@ $(document).ready(function(){
     }
   });
 
-  // Nav in viewport
-  $(menuItemsEle).bind('inview', function(event, visible) {
-    if (visible) {
-      $(this).stop().animate({ opacity: 1 });
-      let currentTarget = $(event.currentTarget);
-      let currentID = currentTarget.attr('data-collapse');
-      let currentButton = topMenu.find('[data-mobile-button="'+currentID+'"]')
-      // displaying button stage
-      menuItems.removeClass(CLASS_ACTIVE);
-      if(!currentButton.hasClass(CLASS_ACTIVE)){
-        currentButton.addClass(CLASS_ACTIVE);
+  // detect section
+
+  function onScrolling(){
+    $(menuItemsEle).bind('inview', function(event, visible) {
+      // check to only active the function on mobile
+      if (visible) {
+        $(this).stop().animate({ opacity: 1 });
+        let currentTarget = $(event.currentTarget);
+        let currentID = currentTarget.attr('data-collapse');
+        let currentButton = topMenu.find('[data-mobile-button="'+currentID+'"]')
+        // displaying button stage
+        menuItems.removeClass(CLASS_ACTIVE);
+        if(!currentButton.hasClass(CLASS_ACTIVE)){
+          currentButton.addClass(CLASS_ACTIVE);
+        }
       }
-    } else {
-      $(this).stop().animate({ opacity: 0 });
-      console.log("nah");
+    });
+  }
+
+  // Nav in viewport
+  if(this.ResizeTimer) clearTimeout(this.ResizeTimer);
+  this.ResizeTimer = setTimeout(() => {
+
+    // on mobile
+    if($(window).width() < 950){
+      onScrolling();
     }
-  });
+    this.ResizeTimer = null;
+  }, 100);
+  // on mobile
+  if($(window).width() < 950){
+    onScrolling();
+  }
 
 
   /** ------- nav bar -------  **/

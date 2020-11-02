@@ -1,15 +1,27 @@
 // Banner section
 
+// landscape tablet & desktop up
+.c-section{
+  &__wrapper{
+    @include t-media-query($s-medium-up) {
+      @include t-flex();
+      @include t-flex-row-reverse();
+      @include t-flex-justify-between();
+    }
+  }
+}
+
 .c-section-banner{
   padding: $s-gutter--small;
 
   &__profile{
-    padding: $s-gutter--small;
-    background-color: $s-color--background;
-    border: $s-input--border $s-color--border-default;
-    box-shadow: 10px 10px $s-color--primary;
+
 
     &-image{
+      padding: $s-gutter--small;
+      background-color: $s-color--background;
+      border: $s-input--border $s-color--border-default;
+      box-shadow: 10px 10px $s-color--primary;
       &-wrapper{
         width: 75%;
         max-width: 20rem;
@@ -211,8 +223,29 @@
   }
 
   /*==== Media Queries ====*/
+  // landscape tablet & desktop up
   @include t-media-query($s-medium-up){
+    // wrapper
+    &__collapses{
+      width: 65%;
+      margin-top: 0;
+      padding: 0;
+      .slick{
+        &-prev { 
+          right: ($s-gutter--base*5); 
+        }
+        &-next{
+          right: 0;
+        }
+      }
+    }
     &__profile{
+      width: calc(35% - #{$s-gutter--mobile-side-padding});
+      &-image{
+        position: -webkit-sticky;
+        position: sticky;
+        top: $s-gutter--mobile-side-padding;
+      }
       &-image-wrapper{
         position: relative;
         &:before{
@@ -232,6 +265,7 @@
         }
       }
     }
+
 
     &__mobile-buttons{
       display: none;

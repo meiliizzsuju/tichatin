@@ -2,11 +2,58 @@
 
 .c-section-banner__collapse + .c-section-banner__collapse{
   margin-top: ($s-gutter--large*2);
+  /*==== Media Queries ====*/
+  // landscape tablet & desktop up
+  @include t-media-query($s-medium-up){
+    margin-top: 0;
+    border-top: $s-input--border $s-color--border-default;
+  }
 }
 
 
 .c-section-banner__collapse{
   &-title{
     text-align: center;
+  }
+
+  /*==== Media Queries ====*/
+  // landscape tablet & desktop up
+  @include t-media-query($s-medium-up){
+    // individual toggles
+    padding: 0 $s-gutter--small;
+    &-title{
+      cursor: pointer;
+      padding: 4% 0;
+      text-align: left;
+    }
+
+    &-body{
+      height: 100%;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: $s-animation--basic;
+
+      .is-visible &{
+        max-height: 100rem;
+        opacity: 1;
+        padding-bottom: 1.25rem;
+      }
+
+      >*{
+        visibility: hidden;
+        height: 0;
+        opacity: 0;
+        .is-visible &{
+          visibility: visible;
+          height: auto;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include t-media-query($s-large-up){
+    padding: 0 $s-gutter--medium;
   }
 }

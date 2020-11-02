@@ -22,6 +22,7 @@
       background-color: $s-color--background;
       border: $s-input--border $s-color--border-default;
       box-shadow: 10px 10px $s-color--primary;
+      overflow: hidden;
       &-wrapper{
         width: 75%;
         max-width: 20rem;
@@ -71,6 +72,26 @@
       &-img{
         width: 100%;
         max-width: ($s-gutter--base*4);
+      }
+    }
+    
+    &-quote{
+      @include t-flex();
+      @include t-flex-alignitems-flex-end();
+      animation: moveSlideshow 10s linear infinite;
+      margin-left: -1.5rem;
+      width: calc(100% + 3rem);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      &-span{
+        font-size: 0.7rem;
+        display: block;
+        padding: 0.5rem 1rem;
+        -ms-flex: 0 0 auto;
+        -webkit-box-flex: 0;
+                flex: 0 0 auto;
+        width: 100%;
+        background: aliceblue;
       }
     }
   }
@@ -235,7 +256,7 @@
   @include t-media-query($s-medium-up){
     // wrapper
     &__collapses{
-      width: 65%;
+      width: 62%;
       margin-top: 0;
       padding: 0;
       .slick{
@@ -248,7 +269,7 @@
       }
     }
     &__profile{
-      width: calc(35% - #{$s-gutter--mobile-side-padding});
+      width: calc(38% - #{$s-gutter--mobile-side-padding});
       &-image{
         position: -webkit-sticky;
         position: sticky;
@@ -277,6 +298,12 @@
 
     &__mobile-buttons{
       display: none;
+    }
+  }
+
+  @include t-media-query($s-large-up){
+    &__profile-quote-span{
+      font-size: 1rem;
     }
   }
 }

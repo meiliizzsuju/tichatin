@@ -12,6 +12,37 @@ $s-animation--ease-out: ease-out;
 $s-animation--basic: all .5s ease-in-out;
 $s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
 
+@-webkit-keyframes moveSlideshow {
+  0%{
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% { 
+    -webkit-transform: translateX(-100%); 
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes moveSlideshow {
+  0%{
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% { 
+    -webkit-transform: translateX(-100%); 
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes border-dance {
+  0% {
+    background-position: 0px 0px, 300px 116px, 0px 150px, 216px 0px;
+  }
+  100% {
+    background-position: 300px 0px, 0px 116px, 0px 0px, 216px 150px;
+  }
+}
+
 @keyframes border-dance {
   0% {
     background-position: 0px 0px, 300px 116px, 0px 150px, 216px 0px;
@@ -21,29 +52,54 @@ $s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
 
-@keyframes o-btn-border-run {
+@-webkit-keyframes o-btn-border-run {
   0% { 
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%); 
+            transform: translateX(0%);
   }
   50% {
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
   51% {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% { 
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%); 
+            transform: translateX(0%);
   }
 }
 
-@keyframes slideup{
+@keyframes o-btn-border-run {
+  0% { 
+    -webkit-transform: translateX(0%); 
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  51% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% { 
+    -webkit-transform: translateX(0%); 
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideup{
   0% {
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-transform: translateY(2000px) rotate(10deg)
   }
 
   60% {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: translateY(-30px)
   }
 
@@ -56,9 +112,44 @@ $s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
 
+@keyframes slideup{
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateY(2000px) rotate(10deg)
+  }
+
+  60% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: translateY(-30px)
+  }
+
+  80% {
+    -webkit-transform: translateY(10px)
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg)
+  }
+}
+
+@-webkit-keyframes container-slide {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: rotate(0deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg)
+  }
+}
+
 @keyframes container-slide {
   0% {
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-transform: rotate(0deg)
   }
 
@@ -68,9 +159,9 @@ $s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @keyframes swing1 {
-  0%{transform:rotate(-3deg)}
-  50%{transform:rotate(3deg)}
-  100%{transform:rotate(-3deg)}
+  0%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  50%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+  100%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
 }
 @-webkit-keyframes swing1 {
   0%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
@@ -84,9 +175,9 @@ $s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @keyframes swing2 {
-  0%{transform:rotate(3deg)}
-  50%{transform:rotate(-3deg)}
-  100%{transform:rotate(3deg)}
+  0%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
+  50%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  100%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
 }
 @-webkit-keyframes swing2 {
   0%{-webkit-transform:rotate(3deg);transform:rotate(3deg)}
@@ -100,9 +191,9 @@ $s-animation--custom: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @keyframes swing3 {
-  0%{transform:rotate(2deg)}
-  50%{transform:rotate(-3deg)}
-  100%{transform:rotate(2deg)}
+  0%{-webkit-transform:rotate(2deg);transform:rotate(2deg)}
+  50%{-webkit-transform:rotate(-3deg);transform:rotate(-3deg)}
+  100%{-webkit-transform:rotate(2deg);transform:rotate(2deg)}
 }
 @-webkit-keyframes swing3 {
   0%{-webkit-transform:rotate(3deg);transform:rotate(2deg)}

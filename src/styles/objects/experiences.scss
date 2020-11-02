@@ -13,7 +13,7 @@
   }
 
   &__name{
-    display: inline-block;
+    display: block;
   }
 
   &__title{
@@ -40,6 +40,61 @@
         height: 1px;
         width: 1rem;
         background-color: $s-color--default;
+      }
+    }
+  }
+
+  @include t-media-query($s-medium-up){
+    &__year{
+      position: relative;
+      .slick-slide + .slick-slide &{
+        &:before{
+          content: "";
+          position: absolute;
+          width: 3rem;
+          background: linear-gradient(90deg,$s-color--tertiary 50%,transparent 0);
+          background-repeat: repeat-x;
+          background-size: 15px 4px;
+          background-position: 0 0, 200px 100px, 0 100px, 200px 0;
+          padding: 1px;
+          animation: border-dance 10s infinite linear;
+          top: 50%;
+          margin: 3px;
+          left: -6.5rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1000px){
+    &__year{
+      .slick-slide + .slick-slide &{
+        &:before{
+          left: -4.5rem;
+          width: 2.2vw;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1250px){
+    &__year{
+      .slick-slide + .slick-slide &{
+        &:before{
+          left: -4.5rem;
+          width: 3.2vw;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1500px){
+    &__year{
+      .slick-slide + .slick-slide &{
+        &:before{
+          left: -7.5vw;
+          width: 5.2vw;
+        }
       }
     }
   }

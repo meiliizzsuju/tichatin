@@ -203,6 +203,9 @@
         &:focus{
           outline: none;
         }
+        &.slick-disabled{
+          opacity: 0.25;
+        }
       }
       &-prev { 
         right: ($s-gutter--base*3); 
@@ -223,6 +226,11 @@
   }
 
   /*==== Media Queries ====*/
+  @media only screen and (min-width: 650px){
+    &__collapse-box-paginate{
+      display: none;
+    }
+  }
   // landscape tablet & desktop up
   @include t-media-query($s-medium-up){
     // wrapper

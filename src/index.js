@@ -106,7 +106,7 @@ $(document).ready(function(){
 
   // experiences slick
   expSlide.slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
@@ -140,19 +140,7 @@ $(document).ready(function(){
     stepPage.html(body);
   }
 
-    // On after slide change
-    expSlide.on('afterChange', (e, slick, currentSlide, nextSlide) => onSlickChange(e, slick, currentSlide, nextSlide));
+  // On after slide change
+  expSlide.on('afterChange', (e, slick, currentSlide, nextSlide) => onSlickChange(e, slick, currentSlide, nextSlide));
 
 });
-
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  // Lodash, now imported by this script
-  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-// document.body.appendChild(component());

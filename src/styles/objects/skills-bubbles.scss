@@ -3,12 +3,23 @@
 .o-skills-bubbles{
   &__bubble{
     display: block;
-    background-color: $s-color--gray;
+    // background-color: $s-color--gray;
     padding: ($s-gutter--base*2);
     border-radius: 50%;
     text-align: center;
     margin-top: $s-gutter--base;
     margin-bottom: $s-gutter--base;
+
+    // svg
+    > svg,
+    > img{
+      display: block;
+      min-width: 100%;
+      min-height: 100%;
+      width: 3rem;
+      height: 3rem;
+      margin: 0 auto 0.5rem;
+    }
 
     .is-bubble-1 &,
     .is-bubble-4 &{
@@ -45,19 +56,11 @@
       width: 6rem;
       height: 96px;
       height: 6rem;
-      padding: 16px;
       padding: 1rem;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
     }
 
+
+  @media only screen and (max-width: 599px){
     .is-bubble-1 &{
       margin-left: auto;
     }
@@ -73,29 +76,51 @@
       margin-left: auto;
       margin-right: 15%;
     }
+  }
 
     // colors
-    .is-bubble-1 &{
-      background-color: #e6e1eb;
-    }
+    // .is-bubble-1 &{
+    //   background-color: #e6e1eb;
+    // }
 
-    .is-bubble-2 &{
-      background-color: #cadae1;
-    }
+    // .is-bubble-2 &{
+    //   background-color: #cadae1;
+    // }
 
-    .is-bubble-3 &{
-      background-color: #faf7d1;
-    }
+    // .is-bubble-3 &{
+    //   background-color: #faf7d1;
+    // }
     
-    .is-bubble-4 &{
-      background-color: #fcd9d6;
+    // .is-bubble-4 &{
+    //   background-color: #fcd9d6;
+    // }
+
+    // .is-bubble-5 &{
+    //   background-color: #72d5e0;
+    // }
+  }
+
+  @media only screen and (min-width: 600px){
+    @include t-flex();
+    @include t-flex-justify-center();
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &__animate{
+      width: 50%;
     }
 
-    .is-bubble-5 &{
-      background-color: #72d5e0;
+    &__bubble{
+      margin-left: auto;
+      margin-right: auto;
     }
   }
-  &__animate{
-    // position: absolute;
+
+
+  @include t-media-query($s-medium-up){
+    padding-bottom: $s-gutter--large;
+    &__animate{
+      width: 33.33%;
+    }
   }
 }

@@ -76,7 +76,8 @@
         .is-penrith &,
         .is-keeko &,
         .is-simplesat &,
-        .is-zitsticka &{
+        .is-zitsticka &,
+        .is-nuzest &{
           @include t-flex-justify-center();
         }
         
@@ -121,6 +122,10 @@
         .is-keeko &,
         .is-tedxbkk &{
           margin-right: 4%;
+        }
+
+        .is-nuzest &{
+          width: 25%;
         }
 
       }

@@ -1,0 +1,20 @@
+// v2 section
+
+
+.c-v2-section{
+  &__wrapper{
+    padding: ($s-gutter--xsmall*2);
+
+    @include t-media-query($s-xsmall){
+      text-align: center;
+    }
+  }
+
+  &__container{
+    h1, h2, h3, h4, h5, h6 {
+      @include t-media-query($s-xsmall){
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

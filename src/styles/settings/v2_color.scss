@@ -1,0 +1,68 @@
+/*
+ *  Color Settings
+ *    Settings for the colors/colours used throughout the styles. We will be
+ *    using the term 'color' exclusively!
+ *
+ *  Version:
+ *    2.0.0 - 2018/10/31
+ */
+
+/*** Standard Color Definitions ***/
+$s-color--background: white;
+$s-color--default: #fff;
+$s-color--dark: #8d9192;
+$s-color--gray: #c5c5c5;
+
+$s-color--background-alternate: #F8F8F8;
+$s-color--background-secondary: #D0A48A;
+
+$s-color--background-light-bg: #F8F5F0;
+
+
+/*** Border Colors ***/
+$s-color--border-default: #c4c4c4;
+$s-color--border-default-hover: #F3F3F3;
+$s-color--border-secondary: rgba(74, 74, 74, 0.2);
+$s-color--border-secondary-hover: #F3F3F3;
+
+
+/*** Common Color Sets ***/
+//Primary
+$s-color--primary: #fff;
+$s-color--primary-compliment: white;
+
+//Secondary
+$s-color--secondary: #C9CCCD;
+$s-color--secondary-compliment: #aee1ee;
+
+//Tertiary (if you need it)
+$s-color--tertiary: #D9CFC2;
+$s-color--tertiary-compliment: $s-color--secondary;
+
+$s-color--quaternary: #F8F8F8;
+$s-color--quaternary-compliment: $s-color--default;
+$s-color--quaternary-muted: #979797;
+
+//Disabled
+$s-color--disabled: transparent;
+$s-color--disabled-alternate: #B2B2B2;
+$s-color--disabled-compliment: rgba($s-color--secondary, 0.3);
+$s-color--disabled-border: $s-color--disabled-compliment;
+
+/*** Generated Color Sets (Can be overridden with specific colors) ***/
+//Primary
+$s-color--primary-hover: lighten($s-color--primary, 10%);
+$s-color--primary-compliment-hover: lighten($s-color--primary-compliment, 10%);
+
+//Secondary
+$s-color--secondary-hover: lighten($s-color--secondary, 10%);
+$s-color--secondary-compliment-hover: lighten($s-color--secondary-compliment, 10%);
+
+//Tertiary
+$s-color--tertiary-hover: lighten($s-color--tertiary, 10%);
+$s-color--tertiary-compliment-hover: lighten($s-color--tertiary-compliment, 10%);
+
+/*** Extra Colour Sets ***/
+//Forms
+$s-color--error: red;
+$s-color--success: $s-color--secondary;

@@ -1,0 +1,6 @@
+// v2 Footer
+.c-v2-footer{
+  @include t-flex();
+  @include t-flex-justify-between();
+  padding: ($s-gutter--xsmall*2);
+}

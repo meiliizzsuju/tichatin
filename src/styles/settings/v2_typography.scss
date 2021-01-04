@@ -1,0 +1,46 @@
+/*
+ *  Typography Settings
+ *    Contains fonts, and font definitions for use throughout the styles.
+ *
+ *  Version:
+ *    2.0.0 - 2018/10/31
+ */
+
+
+/*** Font Stacks ***/
+$s-font--stack-default: "Big Caslon", Helvectica, sans-serif;
+$s-font--stack-extra: "IBM Plex Mono", Helvectica, sans-serif;
+$s-font--stack-extra2: "IBM Plex Mono Medium", Helvectica, sans-serif;
+
+/*** Font Sizes ***/
+$s-font--size-default: 14px;
+
+/*** Font Weights ***/
+$s-font--weight-default: 400;
+
+/*** Line Heights ***/
+$s-font--line-default: 1.5;
+
+/*** Letter Spacing ***/
+$s-font--letter-default: 0.0614em;
+$s-font--letter-heading: 0.015em;
+
+/*** Font Sets ***/
+%s-font--button {
+  font-family: $s-font--stack-default;
+  text-decoration: none;
+  letter-spacing: 0.0614em;
+}
+
+%s-font--button-quaternary {
+  text-transform: none;
+}
+
+.o-bold{
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+}

@@ -1,11 +1,15 @@
 const path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
   mode: 'none',
-  entry: './src/index.js',
+  entry: {
+    home: './src/index.js',
+    v2: './src/v2.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name]bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
@@ -63,4 +67,14 @@ module.exports = {
     compress: true,
     port: 9000
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'V1',
+      filename: './src/v1.html'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'V2',
+      filename: './src/v2/index.html'
+    })
+  ]
 };

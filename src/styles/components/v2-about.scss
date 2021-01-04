@@ -1,0 +1,46 @@
+// V2 About
+.c-v2-about{
+  &__title{
+    &-dekstop{
+      display: none;
+    }
+    &-mobile{
+      margin-bottom: 0;
+    }
+  }
+  &__image{
+    padding: $s-gutter--small ($s-gutter--small*2.5);
+    &-box{
+      // margin-top: $s-gutter--small;
+      position: relative;
+      padding-top: 100%;
+      overflow: hidden;
+      box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.4);
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: block;
+        -o-object-fit: cover;
+       object-fit: cover;
+      }
+    }
+  }
+
+  @include t-media-query($s-xsmall){
+    &__container{
+      @include t-flex();
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+          -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse;
+    }
+
+    &__content-item.is-desktop{
+      display: none;
+    }
+      
+  }
+
+}

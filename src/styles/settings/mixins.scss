@@ -51,6 +51,13 @@
   align-items: flex-start;
 }
 
+@mixin t-flex-alignitems-center() {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          -ms-grid-row-align: center;
+      align-items: center;
+}
+
 @mixin transition-basic() {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;

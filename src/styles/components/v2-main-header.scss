@@ -1,0 +1,19 @@
+//  V2 Main Header
+
+.c-v2-main-header{
+  position: relative;
+
+  &__logo{
+    width: 100%;
+    max-width: 4rem;
+    .alt-logo{
+      display: none;
+      visibility: hidden;
+    }
+  }
+  &__nav{
+    position: relative;
+    @include t-flex();
+    @include t-flex-justify-between();
+  }
+}

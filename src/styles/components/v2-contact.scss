@@ -1,0 +1,28 @@
+// v2 contact section
+
+.c-v2-contact{
+  padding: ($s-gutter--xsmall*3) 0;
+  .o-contact-list__item + .o-contact-list__item{
+    margin-left: $s-gutter--xsmall;
+  }
+  .o-contact-list{
+    @include t-flex();
+    @include t-flex-alignitems-center();
+    @include t-flex-justify-center();
+    padding-bottom: $s-gutter--xsmall*3;
+
+    &__link{
+      display: block;
+    }
+
+    &__item{
+      svg{
+        height: auto;
+        width: 100%;
+        max-width: ($s-gutter--xsmall*5);
+        padding: 0 ($s-gutter--xsmall);
+        fill: $s-color--background;
+      }
+    }
+  }
+}

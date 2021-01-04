@@ -1,0 +1,23 @@
+// V2 Skill
+
+.c-v2-skill{
+  .o-skills-bubbles{
+    @include t-flex();
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    svg{
+      fill: $s-color--background;
+      stroke: $s-color--background; 
+      .st6,
+      .st7,
+      .st8{
+        stroke: $s-color--background; 
+      }
+    }
+
+    &__animate{
+      width: 50%;
+    }
+  }
+}

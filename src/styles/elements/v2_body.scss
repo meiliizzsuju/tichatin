@@ -1,0 +1,43 @@
+/*
+ *  Body Styles
+ *    Applies these styles directly to the body element
+ *
+ *  Version:
+ *    1.0.0 - 2018/10/31
+ */
+ body {
+  color: $s-color--default;
+  background: $s-color--background;
+
+  font-family: $s-font--stack-default;
+  font-size: $s-font--size-default;
+  font-weight: $s-font--weight-default;
+  line-height: $s-font--line-default;
+  letter-spacing: $s-font--letter-default;
+  
+  min-height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none; /* fix weird fontsize rendering on ios */
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  background-image: url('./images/v2-bg.png');
+  background-size: contain;
+  background-position: center center;
+  background-attachment: fixed;
+  
+  /*==== Media Queries ====*/
+  @include t-media-query($s-xsmall){
+    background-size: auto;
+    background-position: top left;
+    
+    // onmobile nav open
+    &.is-nav-active{
+      position: fixed;
+    }
+    
+  }
+}

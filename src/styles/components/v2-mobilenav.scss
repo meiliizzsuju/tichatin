@@ -1,0 +1,129 @@
+// Mobile nav
+
+.c-v2-mobilenav{
+  width: 100%;
+  padding: 0 ($s-gutter--xsmall*2);
+  
+  &__button{
+    display: block;
+    z-index: 2;
+    &-strip{
+      display: block;
+      width: 1.45rem;
+      height: 2px;
+      background-color: $s-color--primary;
+    }
+    &-strip + &-strip{
+      margin-top: $s-gutter--base;
+    }
+  }
+
+
+  @include t-media-query($s-xsmall){
+    // button
+    &__button{
+      &-strip{
+        @include transition-basic();
+        &:nth-child(1){
+          .is-nav-active &{
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+        &:nth-child(2){
+          .is-nav-active &{
+            -webkit-transform: translate(-0.02rem,-0.64rem) rotate(-45deg);
+            transform: translate(-0.02rem,-0.64rem) rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .c-v2-mainnav__item + .c-v2-mainnav__item{
+      margin-top: $s-gutter--small;
+    }
+
+    .c-v2-mainnav{
+      position: absolute;
+      background-color: transparent;
+      font-size: 1.25rem;
+
+      @include t-flex();
+      @include t-flex-justify-center();
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -ms-grid-row-align: center;
+      align-items: center;
+
+      width: 5rem;
+      height: 5rem;
+
+      left: 100%;
+      top: 0;
+
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      z-index: -1;
+      opacity: 0;
+
+      @include transition-basic();
+
+      // transition: width 0s, all 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+
+      &__link{
+        position: relative;
+        color: $s-color--primary;
+        z-index: 1;
+      }
+
+      &:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('./images/v2-nav-bg.png');
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      &.is-active{
+        left: -1.5rem;
+        top: -0.5rem;
+        width: calc(100% + 3rem);
+        margin-top: 0;
+        opacity: 1;
+        z-index: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        height: 100vh;
+        &:before{
+          -webkit-animation: bigger-bg-size 1.5s;
+          animation: bigger-bg-size 1.5s;
+          -webkit-animation-fill-mode: forwards;
+                  animation-fill-mode: forwards;
+        }
+      }
+
+      &.is-reverse{
+        transition-delay: 0.5s;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        height: 0;
+        &:before{
+          width: 300%;
+          -webkit-transform: rotate(260deg);
+                  transform: rotate(260deg);
+          -webkit-animation: reduce-nav-bg 0.5s;
+          animation: reduce-nav-bg 0.5s;
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+  }
+}

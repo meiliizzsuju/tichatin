@@ -25,4 +25,13 @@
       }
     }
   }
+
+  @include t-media-query($s-small-up){
+    .o-contact-list{
+      padding: $s-gutter--small 0;
+    }
+    .o-contact-list__item + .o-contact-list__item{
+      margin-left: $s-gutter--small;
+    }
+  }
 }

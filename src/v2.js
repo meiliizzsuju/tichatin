@@ -4,6 +4,7 @@ import $ from 'jquery';
 import './vendors/slick.js';
 
 import { v2Header } from './scripts/v2Header';
+import { v2Main } from './scripts/v2Main';
 
 $(document).ready(function(){
   // V2 Exp
@@ -24,6 +25,7 @@ $(document).ready(function(){
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          adaptiveHeight: true
         }
       },{
         breakpoint: 999,
@@ -31,8 +33,10 @@ $(document).ready(function(){
           slidesToShow: 3,
           slidesToScroll: 1,
           autoplaySpeed: 6000,
+          adaptiveHeight: true
         }
       }
     ]
   });
+
 });

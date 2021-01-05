@@ -17,4 +17,13 @@
       }
     }
   }
+
+  @include t-media-query($s-medium-up){
+    &__wrapper{
+      padding: ($s-gutter--medium);
+      width: 100%;
+      max-width: 1670px;
+      margin: 0 auto;
+    }
+  }
 }

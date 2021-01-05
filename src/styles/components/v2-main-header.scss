@@ -16,4 +16,15 @@
     @include t-flex();
     @include t-flex-justify-between();
   }
+
+  @include t-media-query($s-medium-up){
+    &__logo{
+      max-width: 5rem;
+    }
+  }
+  @include t-media-query($s-large-up){
+    &__logo{
+      max-width: 6rem;
+    }
+  }
 }

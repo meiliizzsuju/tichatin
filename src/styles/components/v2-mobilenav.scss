@@ -126,4 +126,33 @@
       }
     }
   }
+
+  @include t-media-query($s-small-up){
+    &__button{
+      display: none;
+    }
+
+
+    .c-v2-mainnav{
+      @include t-flex();
+      @include t-flex-alignitems-center();
+
+      &__item{
+        font-size: 1.3em;
+      }
+    }
+    .c-v2-mainnav__item + .c-v2-mainnav__item{
+      margin-left: $s-gutter--small;
+    }
+  }
+
+  @include t-media-query($s-medium-up){
+    padding: ($s-gutter--xsmall) $s-gutter--small;
+  }
+
+  @include t-media-query($s-medium-up){
+    .c-v2-mainnav{
+      margin-right: $s-gutter--xsmall;
+    }
+  }
 }

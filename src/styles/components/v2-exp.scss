@@ -112,4 +112,17 @@
       }
     }
   }
+
+  @include t-media-query($s-small-up){
+    .c-v2-section__container{
+      padding: $s-gutter--small ($s-gutter--medium);
+    }
+
+    &__slide{
+      margin-top: ($s-gutter--xsmall*3.5);
+      .slick-arrow{
+        top: -1.2rem;
+      }
+    }
+  }
 }

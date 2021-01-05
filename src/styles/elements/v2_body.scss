@@ -36,8 +36,18 @@
     
     // onmobile nav open
     &.is-nav-active{
-      position: fixed;
+      // position: fixed;
     }
     
+  }
+
+  @include t-media-query($s-small-up){
+    .desktop-center{
+      text-align: center;
+    }
+  }
+
+  @include t-media-query($s-small-up){
+    font-size: 1.1rem;
   }
 }

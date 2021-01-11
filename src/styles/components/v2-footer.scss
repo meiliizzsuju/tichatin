@@ -1,6 +1,11 @@
 // v2 Footer
 .c-v2-footer{
-  @include t-flex();
-  @include t-flex-justify-between();
+  position: relative;
   padding: ($s-gutter--xsmall*2);
+  text-align: center;
+
+  @include t-media-query($s-xsmall-up){
+    @include t-flex();
+    @include t-flex-justify-between();
+  }
 }

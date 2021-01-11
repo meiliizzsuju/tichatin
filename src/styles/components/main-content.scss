@@ -1,0 +1,46 @@
+.c-main-content{
+  opacity: 0;
+  transition: opacity 1s $s-animation--custom;
+  transition-delay: 1s;
+
+  &.is-loaded{
+    opacity: 1;
+  }
+}
+
+.c-loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include t-flex();
+  @include t-flex-alignitems-center();
+  @include t-flex-justify-center();
+  transition: opacity 1s $s-animation--custom;
+  // transition-delay: 1s;
+
+  width: 100%;
+  height: 100vh;
+
+  &__icon{
+    -webkit-animation: spinning 3s linear infinite;
+    animation: spinning 3s linear infinite;
+    transition: $s-animation--basic;
+    .is-loaded &{
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &.is-loaded{
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  @include t-media-query($s-xsmall){
+    &__icon{
+      width: 3rem;
+    }
+  }
+}

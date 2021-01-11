@@ -28,6 +28,13 @@
   background-size: contain;
   background-position: center center;
   background-attachment: fixed;
+
+  margin: 0;
+
+  section{
+    position: relative;
+    z-index: 2;
+  }
   
   /*==== Media Queries ====*/
   @include t-media-query($s-xsmall){
@@ -36,7 +43,9 @@
     
     // onmobile nav open
     &.is-nav-active{
-      // position: fixed;
+      position: inherit;
+      height: 100vh;
+      overflow-y: hidden;
     }
     
   }
@@ -50,4 +59,9 @@
   @include t-media-query($s-small-up){
     font-size: 1.1rem;
   }
+}
+
+.o-v2-main{
+  position: relative;
+  overflow: hidden;
 }

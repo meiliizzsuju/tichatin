@@ -1,6 +1,7 @@
 // Mobile nav
 
 .c-v2-mobilenav{
+  position: relative;
   width: 100%;
   padding: 0 ($s-gutter--xsmall*2);
   
@@ -93,7 +94,7 @@
 
       &.is-active{
         left: -1.5rem;
-        top: -0.5rem;
+        top: 0;
         width: calc(100% + 3rem);
         margin-top: 0;
         opacity: 1;
@@ -101,6 +102,7 @@
         -webkit-transform: scale(1);
         transform: scale(1);
         height: 100vh;
+        overflow: hidden;
         &:before{
           -webkit-animation: bigger-bg-size 1.5s;
           animation: bigger-bg-size 1.5s;
@@ -139,6 +141,9 @@
 
       &__item{
         font-size: 1.3em;
+      }
+      &__link{
+        text-shadow: 0px 0px 5px rgba(255,255,255,0.5);
       }
     }
     .c-v2-mainnav__item + .c-v2-mainnav__item{

@@ -62,6 +62,7 @@
 
 // Components
 
+@import './styles/components/main-content.scss';
 @import './styles/components/v2-section.scss';
 @import './styles/components/v2-main-header.scss';
 @import './styles/components/v2-mobilenav.scss';
@@ -70,6 +71,9 @@
 @import './styles/components/v2-footer.scss';
 @import './styles/components/v2-exp.scss';
 @import './styles/components/v2-skills.scss';
+
+// object
+@import './styles/objects/parallax.scss';
 
 //Vondors
 @import './styles/vendors/slick';

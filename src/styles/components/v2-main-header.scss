@@ -17,6 +17,13 @@
     @include t-flex-justify-between();
   }
 
+  &-wrapper{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
   @include t-media-query($s-medium-up){
     &__logo{
       max-width: 5rem;

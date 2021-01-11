@@ -1,0 +1,148 @@
+// floating object
+
+.o-pl{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  &.is-desktop{
+    display: none;
+  }
+
+  &__img{
+    position: absolute;
+    right: 0;
+    > svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .is-1 &{
+      right: -3rem;
+      width: 6rem;
+      height: auto;
+      margin-top: 70%;
+    }
+
+    .is-2 &{
+      width: 10rem;
+      left: -3rem;
+      margin-top: 120%;
+    }
+
+    .is-3 &{
+      right: 15%;
+      margin-top: 60%;
+    }
+
+    .is-4 &{
+      left: 2.25rem;
+      width: 1.5rem;
+    }
+
+
+    .is-5 &{
+      right: 15%;
+      margin-top: 150%;
+    }
+  }
+
+  &.is-1{
+    margin-left: auto;
+  }
+
+  @include t-media-query($s-small-up){
+    &__img{
+      .is-1 &{
+        width: 10rem;
+        margin-top: 11%;
+      }
+      .is-2 &{
+        width: 12rem;
+        margin-top: 68%;
+      }
+
+      .is-5 &{
+        margin-top: 100%;
+      }
+    }
+  }
+  
+  @include t-media-query($s-medium-up){
+    &__img{
+      .is-2{
+        margin-top: 42%;
+      }
+      .is-3 &{
+        margin-top: 51%;
+      }
+      .is-4 &{
+        left: 4.25rem;
+        width: 2.5rem;
+      }
+    }
+  }
+
+  @include t-media-query($s-large-up){
+    &.is-mobile{
+      display: none;
+    }
+    &.is-desktop{
+      display: block;
+    }
+
+    &__img{
+      .is-4 &{
+        left: 2.25rem;
+        width: 4.5rem;
+        margin-top: 30%;
+      }
+
+      .is-6 &{
+        width: 36rem;
+        right: -27rem;
+        margin-top: 10%;
+      }
+
+      .is-7 &{
+        width: 30rem;
+        left: -14rem;
+        margin-top: 31%;
+      }
+
+      .is-8 &{
+        left: 5.25rem;
+        width: 6rem;
+        margin-top: 51%;
+      }
+    }
+  }
+
+  @include t-media-query($s-xlarge){
+    &__img{
+      .is-4 &{
+        margin-top: 15%;
+      }
+      .is-5 &{
+        margin-top: 36%;
+        width: 7rem;
+        right: 10rem;
+      }
+      .is-6 &{
+        margin-top: 3%;
+        right: -20rem;
+      }
+
+      .is-7 &{
+        width: 40rem;
+        left: -19rem;
+        margin-top: 15%;
+      }
+
+      .is-8 &{
+        left: 13.25rem;
+        margin-top: 30%;
+      }
+    }
+  }
+}

@@ -29,6 +29,10 @@ export class v2Header extends SSection {
     e.stopPropagation();
     e.preventDefault();
 
+    $('html, body').animate({
+      scrollTop: 0
+    }, 500, 'swing');
+
     let self = $(e.currentTarget);
     if (!this.mobileNav.hasClass(CLASS_ACTIVE)){
       this.mobileNav.addClass(CLASS_ACTIVE);
@@ -41,8 +45,6 @@ export class v2Header extends SSection {
         next();
       });
     }
-    console.log(this.v2body);
-    console.log("yo")
   }
 }
 

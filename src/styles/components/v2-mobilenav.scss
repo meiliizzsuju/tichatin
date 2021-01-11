@@ -19,6 +19,17 @@
     }
   }
 
+  .c-v2-mainnav{
+    &__link{
+      position: relative;
+      color: $s-color--primary;
+      z-index: 1;
+      &:hover,&:active,&:focus{
+        color: #3d494c;
+      }
+    }
+  }
+
 
   @include t-media-query($s-xsmall){
     // button

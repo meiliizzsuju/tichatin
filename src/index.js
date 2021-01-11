@@ -15,7 +15,7 @@ window.$ = $;
 export const CLASS_ACTIVE = 'is-active';
 
 $(document).ready(function(){
-  
+
   var mainWrapper = $('[data-main-wrapper]');
   var container = $('[data-collapse-container]');
   var $window = $(window);
@@ -143,4 +143,12 @@ $(document).ready(function(){
   // On after slide change
   expSlide.on('afterChange', (e, slick, currentSlide, nextSlide) => onSlickChange(e, slick, currentSlide, nextSlide));
 
+});
+
+
+$(window).on("load", function() {
+  let popup = $('[data-popup]');
+    setTimeout(function(){
+      popup.addClass('is-shown');
+    }, 5000);
 });

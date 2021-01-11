@@ -13,12 +13,14 @@ export const DATA_SPIN = 'data-spin-ratio';
 export const V2_MOBILE_NAV = '[data-mainnav]';
 export const DATA_MAIN_CONTENT = '[data-main-content]';
 export const DATA_MAIN_LOADER = '[data-loader]';
+export const DATA_MAIN_POPUP = '[data-popup]';
 
 
 export const CLASS_ACTIVE = 'is-active';
 export const CLASS_REVERSE = 'is-reverse';
 export const CLASS_NAV_ACTIVE = 'is-nav-active';
 export const CLASS_LOADED = 'is-loaded';
+export const CLASS_SHOWN = 'is-shown';
 
 export class v2Main extends SSection {
   constructor(container) {
@@ -30,6 +32,7 @@ export class v2Main extends SSection {
     this.v2body = $('[data-v2-body]');
     this.mainContent = this.container.find(DATA_MAIN_CONTENT);
     this.mainLoader = this.container.find(DATA_MAIN_LOADER);
+    this.mainPopup = this.container.find(DATA_MAIN_POPUP);
 
     this.onLoading();
     
@@ -45,18 +48,59 @@ export class v2Main extends SSection {
     this.container.on('click touchend', V2_MOBILE_BUTTON, e => this.onClickButton(e));
     this.onScroll();
     $(window).scroll('scroll', e => this.onScroll(e));
+
+
+      // V2 Exp
+  let expSlide = $('[data-v2-exp-slide]');
+
+  // experiences slick
+  expSlide.slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 649,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          adaptiveHeight: true
+        }
+      },{
+        breakpoint: 999,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplaySpeed: 6000,
+          adaptiveHeight: true
+        }
+      }
+    ]
+  });
   }
+  loadPopup(){
+    let popup = this.mainPopup
+    setTimeout(function(){
+      popup.addClass(CLASS_SHOWN);
+    }, 5000);
+  }
+  
 
   onLoading(){
-    this.mainContent.addClass(CLASS_LOADED).delay(2000);
-    this.mainLoader.addClass(CLASS_LOADED).delay(2000);
+    this.mainContent.addClass(CLASS_LOADED);
+    this.mainLoader.addClass(CLASS_LOADED);
+
+    // Show popup
+    this.loadPopup();
   }
 
   onClickButton(e){
     e.stopPropagation();
     e.preventDefault();
-
-    console.log($(window).width())
     
     
     let self = $(e.currentTarget);
@@ -90,7 +134,7 @@ export class v2Main extends SSection {
     } else if($(window).width() > ResponsiveSizes.large){
       scrolled = scrolled*2;
     } else if($(window).width() > ResponsiveSizes.xlarge){
-      scrolled = scrolled;
+      scrolled = scrolled*2;
     }
 
     animateItems.each((e, i) => {

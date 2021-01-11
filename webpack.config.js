@@ -8,10 +8,6 @@ module.exports = {
     home: './src/index.js',
     v2: './src/v2.js'
   },
-  output: {
-    filename: '[name]bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   resolve: {
     alias: {
       jquery: path.resolve(__dirname, 'src/vendors/jquery.js'),
@@ -76,5 +72,9 @@ module.exports = {
       title: 'V2',
       filename: './src/v2/index.html'
     })
-  ]
+  ],
+  output: {
+    filename: '[name]bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  }
 };

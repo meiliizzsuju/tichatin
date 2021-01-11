@@ -13,6 +13,11 @@
 
     &__link{
       display: block;
+      &:hover,&:active,&:focus{
+        svg{
+          fill: #3d494c;
+        }
+      }
     }
 
     &__item{
